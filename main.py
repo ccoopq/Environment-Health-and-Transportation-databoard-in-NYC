@@ -109,7 +109,7 @@ with col2:
 
         # Display the folium map in Streamlit using st_folium
         st.write(f"#### Map of the Selected Vehicle Miles Traveled in {selected_years}")
-        st_folium(folium_map, width=600, height=500)
+        st_folium(folium_map, width=470, height=470)
     else:
         st.error("No data available for the selected filters.")
 
@@ -223,7 +223,7 @@ with col3:
 
     # 显示地图
     map_obj = create_map(population_data_long, geojson_data)
-    st_folium(map_obj, width=500, height=500)
+    st_folium(map_obj, width=470, height=470)
 
 
 # -------------------------------------------------NYC Traffic Volume
@@ -274,4 +274,4 @@ with col3:
 
     # 将Folium地图显示在Streamlit上
     from streamlit_folium import folium_static
-    folium_static(m, width=500, height=500)
+    folium_static(m, width=470, height=470)
