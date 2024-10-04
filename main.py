@@ -18,7 +18,7 @@ from branca.colormap import linear
 st.set_page_config(layout="wide")
 # Streamlit page setup for Pollution, Vehicle Miles Traveled, and PM2.5 Deaths Dashboards
 st.title('Environment, Health, and Transportation databoard in NYC')
-col1, col2, col3 = st.columns([1, 1.2, 1.2])
+col1, col2, col3 = st.columns([1, 1, 1])
 
 # st.sidebar.header('Environment, Health, and Transportation databoard in NYC')
 st.sidebar.write('## This dashboard was created on 10/04/2024 and contains data on Environment, \
@@ -223,7 +223,7 @@ with col2:
 
     # 显示地图
     map_obj = create_map(population_data_long, geojson_data)
-    st_folium(map_obj, width=400, height=400)
+    st_folium(map_obj, width=500, height=500)
 
 
 # -------------------------------------------------NYC Traffic Volume
