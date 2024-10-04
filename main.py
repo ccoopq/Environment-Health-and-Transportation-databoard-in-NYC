@@ -24,7 +24,7 @@ col1, col2, col3 = st.columns([0.8, 1, 1])
 st.sidebar.write('## This dashboard was created on 10/04/2024 and contains data on Environment, \
                 Health, and Transportation in New York City, with the aim of supporting \
                 some research in related areas. All data comes from NYC OpenData (https://opendata.cityofnewyork.us/).')
-st.sidebar.write('## Please refresh this page if there is any error in the layout.')
+st.sidebar.write('### !!! Please refresh this page if there is any error in the layout.')
 
 # Load the processed data
 data = pd.read_csv('Air_Quality_with_Coordinates.csv')
@@ -51,7 +51,8 @@ with col1:
     # Display filtered data and plot
     if not filtered_data.empty:
         st.write(f"#### Annual Average Pollution of {selected_pollutant} in {selected_region}")
-        st.write(filtered_data)
+        if st.checkbox('Show raw data0'):
+            st.write(filtered_data)
         
         # Plotting the data with Year on the x-axis and Data Value on the y-axis using Streamlit
         st.bar_chart(data=filtered_data.set_index('Year')['Data Value'])
@@ -132,7 +133,8 @@ with col2:
     # Display filtered data and plot
     if not filtered_data.empty:
         st.write(f"#### Deaths due to PM2.5 in {selected_region}")
-        st.write(filtered_data)
+        if st.checkbox('Show raw data2'):
+            st.write(filtered_data)
         
         # Plotting the data with Year on the x-axis and Data Value on the y-axis using Streamlit
         st.line_chart(data=filtered_data.set_index('Year')['Data Value'])
@@ -161,7 +163,8 @@ with col1:
     # Display filtered data and plot
     if not filtered_data.empty:
         st.write(f"#### Target CO2 Emissions of {selected_source} from 2023 to 2050 in NYC")
-        st.write(filtered_data)
+        if st.checkbox('Show raw data1'):
+            st.write(filtered_data)
         
         # Plotting the data with Year on the x-axis and Data Value on the y-axis using Streamlit
         st.bar_chart(data=filtered_data.set_index('Year')['Metric tons of CO2e'])
