@@ -24,6 +24,7 @@ col1, col2, col3 = st.columns([0.8, 1, 1])
 st.sidebar.write('## This dashboard was created on 10/04/2024 and contains data on Environment, \
                 Health, and Transportation in New York City, with the aim of supporting \
                 some research in related areas. All data comes from NYC OpenData (https://opendata.cityofnewyork.us/).')
+st.sidebar.write('## Please refresh this page ff there is any error in the layout.')
 
 # Load the processed data
 data = pd.read_csv('Air_Quality_with_Coordinates.csv')
