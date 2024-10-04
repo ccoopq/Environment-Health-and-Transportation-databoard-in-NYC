@@ -223,7 +223,7 @@ with col2:
 
     # 显示地图
     map_obj = create_map(population_data_long, geojson_data)
-    st_folium(map_obj, width=480, height=480)
+    st_folium(map_obj, width=400, height=400)
 
 
 # -------------------------------------------------NYC Traffic Volume
