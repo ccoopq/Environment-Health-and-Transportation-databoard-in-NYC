@@ -18,7 +18,7 @@ from branca.colormap import linear
 st.set_page_config(layout="wide")
 # Streamlit page setup for Pollution, Vehicle Miles Traveled, and PM2.5 Deaths Dashboards
 st.title('Environment, Health, and Transportation databoard in NYC')
-col1, col2, col3 = st.columns([1, 1.2, 1])
+col1, col2, col3 = st.columns([1, 1.2, 1.2])
 
 # st.sidebar.header('Environment, Health, and Transportation databoard in NYC')
 st.sidebar.write('## This dashboard was created on 10/04/2024 and contains data on Environment, \
@@ -109,7 +109,7 @@ with col2:
 
         # Display the folium map in Streamlit using st_folium
         st.write(f"#### Map of the Selected Vehicle Miles Traveled in {selected_years}")
-        st_folium(folium_map, width=630, height=500)
+        st_folium(folium_map, width=600, height=500)
     else:
         st.error("No data available for the selected filters.")
 
@@ -206,7 +206,7 @@ with col2:
 
     # 创建地图并添加柱状图的Popup
     def create_map(data, geojson):
-        m = folium.Map(location=[40.7128, -74.0060], zoom_start=10, tiles='CartoDB positron')
+        m = folium.Map(location=[40.7128, -73.9060], zoom_start=10, tiles='CartoDB positron')
         # 为每个区域添加柱状图的Popup
         for feature in geojson['features']:
             borough_name = feature['properties']['boro_name']
@@ -223,7 +223,7 @@ with col2:
 
     # 显示地图
     map_obj = create_map(population_data_long, geojson_data)
-    st_folium(map_obj, width=630, height=500)
+    st_folium(map_obj, width=600, height=500)
 
 
 # -------------------------------------------------NYC Traffic Volume
@@ -274,4 +274,4 @@ with col3:
 
     # 将Folium地图显示在Streamlit上
     from streamlit_folium import folium_static
-    folium_static(m, width=550, height=550)
+    folium_static(m, width=500, height=500)
