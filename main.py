@@ -114,7 +114,7 @@ with col2:
         st.error("No data available for the selected filters.")
 
 # -------------------------------------------------Deaths due to PM2.5
-with col3:
+with col2:
     # Streamlit page setup
     st.write('## Deaths due to PM2.5 (over age 30)')
     st.sidebar.header('Filters For Deaths due to PM2.5')
@@ -172,7 +172,7 @@ with col1:
 population_data = pd.read_csv('New_York_City_Population_by_Borough__1950_-_2040_20241004.csv')
 
 # -------------------------------------------------NYC Population
-with col2:
+with col3:
     # Streamlit页面设置
     st.write('## New York City Population by Borough from 1950 to 2040')
     st.write("#### Click a region to see the bar chart")
