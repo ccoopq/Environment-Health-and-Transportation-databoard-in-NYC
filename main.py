@@ -17,7 +17,7 @@ from branca.colormap import linear
 
 st.set_page_config(layout="wide")
 # Streamlit page setup for Pollution, Vehicle Miles Traveled, and PM2.5 Deaths Dashboards
-st.title('Environment, Health, and Transportation databoard in NYC')
+st.title('Environment, Health, and Transportation dashboard in NYC')
 col1, col2, col3 = st.columns([0.8, 1, 1])
 
 # st.sidebar.header('Environment, Health, and Transportation databoard in NYC')
